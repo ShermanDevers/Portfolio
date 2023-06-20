@@ -1,10 +1,12 @@
-from pytube import YouTube,Playlist
-import time,requests
+from pytube import YouTube, Playlist
+import time, requests
+
+
 def main():
 
     vop = str(input("Videos or Playlist> "))
-    if vop == 'Playlist' or vop == 'playlist':
-        
+    if vop in ["Playlist", "playlist"]:
+
         playlist_link = input("Link to the playlist> ")
         ytplist = []
         ytplaylist = Playlist(playlist_link)
@@ -14,31 +16,29 @@ def main():
             vidnum = 0
             for video in ytplist:
                 ytp = YouTube(video)
-                ytpd = ytp.streams.get_highest_resolution()
-                ytpd.download('/Users/sd320/OneDrive/Desktop/Yt-downloads')
-                print(f'Successfully downloaded {1+vidnum}: {ytp.title}.mp4')
+                ytp.streams.get_highest_resolution().download("/home/sherman/Videos")
+                print(f"Successfully downloaded {1+vidnum}: {ytp.title}.mp4")
                 vidnum += 1
         except requests.HTTPError as httperror:
-            print(f'Server overload {httperror}')
+            print(f"Server overload {httperror}")
         time.sleep(5)
 
-    elif (vop == 'Videos') or (vop =='videos') or (vop =='video') or (vop =='Video'):
+    elif vop in ["Videos", "videos", "Video", "video"]:
 
         linknum = int(input("How many vids do you want to download> "))
-        vidresolution = str(input('What resolution do you want your video(s)> '))
         testlist = []
         for i in range(linknum):
             url = input("Link > ")
             testlist.append(url)
         for x in testlist:
             yt = YouTube(x)
-            ytd = yt.streams.get_by_resolution(vidresolution)
-            ytd.download('/Users/sd320/OneDrive/Desktop/Yt-downloads')
-            print(f'Successfully downloaded: {yt.title}.mp4')
+            yt.streams.get_highest_resolution().download("/home/sherman/Videos")
+            print(f"Successfully downloaded: {yt.title}.mp4")
         time.sleep(5)
 
     else:
-        print('Not an option')
+        print("Not an option")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
