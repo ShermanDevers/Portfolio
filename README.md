@@ -7,6 +7,4 @@ Keylogger
 
 Youtube video downloader
 
-Clock
-
 simple Web Scraper
