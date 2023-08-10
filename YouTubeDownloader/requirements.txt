@@ -1,2 +1,4 @@
 # Needs
 pytube
+argparse
+requests
