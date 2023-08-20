@@ -1,10 +1,10 @@
 # Portfolio
-This is a repository of all of my Python Projects
+## This is a repository of all of my Python Projects
 
-Some of the projects I've done:
+**Some of the projects I've done:**
 
-Keylogger
+[Keylogger](https://github.com/linear0s/Portfolio/blob/main/Logger.py)
 
-Youtube video downloader
+[Youtube video downloader](https://github.com/linear0s/Portfolio/blob/main/YouTubeDownloader/YoutubeDownloader.py)
 
-simple Web Scraper
+[Cipher Algorithm](https://github.com/linear0s/Portfolio/blob/main/LimboAlg.py)
