@@ -1,4 +1,4 @@
-from pytube import YouTube, Playlist
+from pytube import YouTube, Playlist, exceptions
 import requests
 import argparse
 import time
@@ -23,44 +23,43 @@ def download_vids(vid_list, dl_location):
         print(f"Successfully downloaded: '{yt.title}'.mp4")
 
 
-def download_playlist(playlist):
-    try:
-        vidnum = 0
-        for video in playlist:
-            ytp = YouTube(video)
-            ytp.streams.get_highest_resolution().download("/home/sherman/Videos")
-            vidnum += 1
-            print(f"Successfully downloaded {vidnum}: {ytp.title}.mp4")
-    except requests.HTTPError as httperror:
-        print(f"Server overload {httperror}")
+def download_playlist(playlist_link, dl_location):
+    playlist_link = "".join(playlist_link)
+    print(playlist_link)
+    playlist = Playlist(playlist_link)
+    for video in playlist.videos:
+        try:
+            video.streams.get_highest_resolution().download(dl_location)
+        except exceptions.AgeRestrictedError:
+            print(f"{video.title}: Age Restricted")
+    print(f"Successfully downloaded {playlist.title}")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="CLI program to download YouTube videos and Playlists"
+        description="CLI program to download YouTube videos and Playlists using pytube"
     )
     parser.add_argument(
         "Video_or_Playlist",
         type=str,
         help="Choose whether to download a Video or a Playlist",
     )
-    parser.add_argument("videos", nargs="+", type=str, help="URLs of the videos")
     parser.add_argument(
-        "Download_location", type=str, help="Where to download the videos (full path)"
+        "videos", nargs="+", type=str, help="URLs of the videos or playlist"
+    )
+    parser.add_argument(
+        "download_location",
+        type=str,
+        help="Where to download the videos (full path) (For videos. It can create the directory if its not there but for playlists it does not)",
     )
     argus = parser.parse_args()
 
     if argus.Video_or_Playlist in ["Playlist", "playlist"]:
-        playlist_link = input("Link to the playlist> ")
-        yt_playlist = []
-        ytplaylist = Playlist(playlist_link)
-        for x in ytplaylist.video_urls:
-            yt_playlist.append(x)
-            download_playlist(yt_playlist)
+        download_playlist(argus.videos, argus.download_location)
 
     elif argus.Video_or_Playlist in ["Videos", "videos", "Video", "video"]:
         dl_vids_t = threading.Thread(
-            target=download_vids, args=[argus.videos, argus.Download_location]
+            target=download_vids, args=[argus.videos, argus.download_location]
         ).start()
         progress_bar_t = threading.Thread(target=progress_bar).start()
 
