@@ -12,6 +12,7 @@ def progress_bar():
         bar_progress = "=" * bars_amount
         print(f"\r[{bar_progress}", end="]")
         bars_amount += 2
+    print()
 
 
 def download_vids(vid_list, dl_location):
@@ -30,6 +31,7 @@ def download_playlist(playlist_link, dl_location):
     for video in playlist.videos:
         try:
             video.streams.get_highest_resolution().download(dl_location)
+            progress_bar()
         except exceptions.AgeRestrictedError:
             print(f"{video.title}: Age Restricted")
     print(f"Successfully downloaded {playlist.title}")
@@ -56,7 +58,6 @@ if __name__ == "__main__":
 
     if argus.Video_or_Playlist in ["Playlist", "playlist"]:
         download_playlist(argus.videos, argus.download_location)
-
     elif argus.Video_or_Playlist in ["Videos", "videos", "Video", "video"]:
         dl_vids_t = threading.Thread(
             target=download_vids, args=[argus.videos, argus.download_location]
