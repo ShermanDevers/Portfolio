@@ -34,6 +34,8 @@ def download_playlist(playlist_link, dl_location):
             progress_bar()
         except exceptions.AgeRestrictedError:
             print(f"{video.title}: Age Restricted")
+        except requests.HTTPError as httpe:
+            print(f"Server overload {httpe}")
     print(f"Successfully downloaded {playlist.title}")
 
 
