@@ -3,8 +3,8 @@
 
 **Some of the projects I've done:**
 
-[Keylogger](https://github.com/linear0s/Portfolio/blob/main/Logger.py)
+[Keylogger](https://github.com/ShermanDevers/Portfolio/blob/main/Logger.py)
 
-[Youtube video downloader](https://github.com/linear0s/Portfolio/blob/main/YouTubeDownloader/YoutubeDownloader.py)
+[Youtube video downloader](https://github.com/ShermanDevers/Portfolio/blob/main/YouTubeDownloader/YoutubeDownloader.py)
 
-[Cipher Algorithm](https://github.com/linear0s/Portfolio/blob/main/LimboAlg.py)
+[Cipher Algorithm](https://github.com/linear0s/ShermanDevers/blob/main/LimboAlg.py)
