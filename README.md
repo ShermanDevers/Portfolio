@@ -7,4 +7,4 @@
 
 [Youtube video downloader](https://github.com/ShermanDevers/Portfolio/blob/main/YouTubeDownloader/YoutubeDownloader.py)
 
-[Cipher Algorithm](https://github.com/linear0s/ShermanDevers/blob/main/LimboAlg.py)
+[A simple cipher algorithm](https://github.com/linear0s/ShermanDevers/blob/main/LimboAlg.py)
