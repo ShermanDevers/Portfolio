@@ -10,8 +10,8 @@ def on_press(key):
 
     if key != Key.esc:
         total_inputs += 1
+        print(f"\r{total_inputs}", end="")
     else:
-        print(f"\n{total_inputs}")
         liste.stop()
 
 
