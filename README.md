@@ -3,10 +3,10 @@
 
 **Some of the projects I've done:**
 
-[Keylogger](https://github.com/ShermanDevers/Portfolio/blob/main/Logger.py)
+[Keylogger](https://github.com/ShermanDevers/Portfolio/blob/main/Python/Logger.py)
 
-[Youtube video downloader](https://github.com/ShermanDevers/Portfolio/blob/main/YouTubeDownloader/YoutubeDownloader.py)
+[Youtube video downloader](https://github.com/ShermanDevers/Portfolio/blob/main/Python/YouTubeDownloader/YoutubeDownloader.py)
 
-[A simple cipher algorithm](https://github.com/ShermanDevers/ShermanDevers/blob/main/LimboAlg.py)
+[A simple cipher algorithm](https://github.com/ShermanDevers/Portfolio/blob/main/Python/LimboAlg.py)
 
-[A Countdown timer](https://github.com/ShermanDevers/Portfolio/blob/main/count%20down.py)
+[A Countdown timer](https://github.com/ShermanDevers/Portfolio/blob/main/Python/count%20down.py)
