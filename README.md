@@ -12,3 +12,5 @@
 [A Countdown timer](https://github.com/ShermanDevers/Portfolio/blob/main/Python/count%20down.py)
 
 [Password Strength Tester (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/Password%20Strength%20Tester.py)
+
+[Password Strength Tester (Go)](https://github.com/ShermanDevers/Portfolio/blob/main/Go/Password%20Strength%20tester/Password%20Strength%20Tester.go)
