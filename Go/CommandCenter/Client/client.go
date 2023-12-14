@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	conne, err := net.Dial("tcp", ":8080")
+	conne, err := net.Dial("tcp", "192.168.1.155:8080")
 	for {
 		if err != nil {
 			fmt.Println(err)

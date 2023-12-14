@@ -10,7 +10,7 @@ import (
 
 func main() {
 	var clientConnections = []net.Conn{}
-	listener, err := net.Listen("tcp", ":8080")
+	listener, err := net.Listen("tcp", "192.168.1.155:8080")
 	fmt.Println("Server is running on port 8080")
 	for {
 		if err != nil {
