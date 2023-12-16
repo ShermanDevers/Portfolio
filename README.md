@@ -17,4 +17,4 @@
 
 [Random Cipher (Go)](https://github.com/ShermanDevers/Portfolio/tree/main/Go/Drunk%20Caesar)
 
-[Todo App (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/TODO.py)
+[CLI Todo App (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/TODO.py)
