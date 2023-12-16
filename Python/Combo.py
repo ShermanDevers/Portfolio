@@ -19,11 +19,13 @@ def write():
 
 possible_pass = int(input("How many passwords do you want to create?: "))
 ran_or_fixed = str(input("Do you want the length to be random or chosen?: "))
+
 if ran_or_fixed in ["random", "Random"]:
     for x in range(possible_pass):
         pass_length = random.randint(10, 20)
         passwd = Gen(pass_length)
         write()
+
 if ran_or_fixed in ["chosen", "Chosen"]:
     pass_length = int(input("How long do you want them do be?: "))
     for x in range(possible_pass):

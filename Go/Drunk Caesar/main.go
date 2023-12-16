@@ -14,8 +14,9 @@ func main() {
 	fmt.Println("#    #  #'  ' #   #  #'  #  # m'          #      '   #  #'  #  #   '  '   #  #'  '")
 	fmt.Println("#    #  #     #   #  #   #  #'#           #      m'''#  #'''#   '''m  m'''#  #")
 	fmt.Println("#mmm'   #     'mm'#  #   #  #  'm          'mmm' 'mm'#  '#mm'  'mmm'  'mm'#  #")
-	fmt.Println()
-
+	fmt.Println("")
+	fmt.Println("                   The Inconsistent Cipher                                  ")
+	fmt.Println("")
 
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("Type a message to scramble: ")
