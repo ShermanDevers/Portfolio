@@ -1,9 +1,13 @@
 import requests
+from bs4 import BeautifulSoup
 
 url = input("Input Url to scrape> ")
 
-r = requests.get(url)
+content = requests.get(url)
+
 with open(
-    "/Users/sd320/OneDrive/Desktop/PythonCode/pythonsite.html", "wb"
-) as pysitew:
-    pysitew.write(r.content)
+    "scraped_website.html", "wb") as pysitew:
+    contents = BeautifulSoup(content.text,"html.parser")
+
+    contents = contents.prettify()
+    pysitew.write(bytes(contents, "utf-8"))
