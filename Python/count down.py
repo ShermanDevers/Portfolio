@@ -1,5 +1,4 @@
 import time
-from datetime import datetime
 
 count_time = int(input("How many seconds long to wait?: "))
 for x in range(count_time, 0, -1):
