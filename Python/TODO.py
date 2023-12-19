@@ -10,6 +10,7 @@ def edit():
             continue
 
         print(f"> {task}")
+
     add_or_remove = input("Would you like to add(A) or remove(R) a task?: ")
     match add_or_remove:
         case "A":
@@ -18,6 +19,7 @@ def edit():
                 action_to_do = input("What do you need to do?: ")
                 with open("Tasks.txt", "a") as tasks:
                     tasks.write(f"{action_to_do}\n")
+
         case "R":
             task_num = int(input("Amount of tasks you want to remove?: "))
             for i in range(task_num):
