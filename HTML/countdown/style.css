@@ -17,7 +17,7 @@ div {
     border: 100px solid rgb(255, 0, 0);
 }
 
-#seconds {
+.time {
     background-color: #a19f9f;
     flex-shrink: 0;
     height: 2rem;

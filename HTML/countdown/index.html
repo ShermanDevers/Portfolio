@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Enter time in seconds:</h1>
+    <h1>Enter time:</h1>
     <button id="start" type="submit" onclick="start()">Start Countdown</button>
-    <input type="number" id="seconds" name="seconds" required>
+    <input class="time" type="number" id="hours" name="hours" required>
+    <input class="time" type="number" id="minutes" name="minutes" required>
+    <input class="time" type="number" id="seconds" name="seconds" required>
     <button id="reset" type="submit" onclick="resetTimer()">Reset timer</button>
     <div class="timer"></div>
 
