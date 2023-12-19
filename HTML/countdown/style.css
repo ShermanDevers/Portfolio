@@ -13,29 +13,50 @@ h1 {
     color: rgb(17, 0, 255);
 }
 
-div {
-    border: 100px solid rgb(255, 0, 0);
-}
 
 .time {
+    display: inline;
     background-color: #a19f9f;
     flex-shrink: 0;
     height: 2rem;
     margin: 0rem 2rem 2rem 2rem;
-    width: 10rem;
+    width: 5rem;
 }
 
 #start {
     background-color: #a19f9f;
     flex-shrink: 0;
-    height: 3.4rem;
-    margin-right: 1rem;
-    width: 18rem;
+    height: 3.7rem;
+    margin-right: 5.1rem;
+    width: 16.4rem;
 }
 
 #reset {
+    display: inline;
+    text-align: center;
     background-color: #a19f9f;
     flex-shrink: 0;
     height: 3.4rem;
-    width: 18.6rem;
+    width: 18rem;
+    padding-right: 204px;
+
+}
+
+h4 {
+    display: inline;
+}
+
+#textHours {
+    padding-left: 250px;
+}
+
+
+#textSeconds {
+    color: red;
+    padding-right: 200px;
+    padding-bottom: 200px;
+}
+
+p {
+    display: inline;
 }
