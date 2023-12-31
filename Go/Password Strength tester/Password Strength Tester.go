@@ -7,38 +7,38 @@ import (
 
 func lengthTest(passwd, passed, failed string) string {
 	minimumLength := 12
-	length_Test := ""
+	lengthResult := ""
 	if len(passwd) >= minimumLength {
-		length_Test = passed
-		return length_Test
+		lengthResult = passed
+		return lengthResult
 	} else {
-		length_Test = failed
-		return length_Test
+		lengthResult = failed
+		return lengthResult
 	}
 }
 
 func specialTest(passwd, passed, failed string) string {
-	special_Test := ""
-	var specialChara string = "!#$%&\\'()*+,-./:;<=>?@[\\]^_`{|}~"
+	specialResult := ""
+	var specialChara = "!#$%&\\'()*+,-./:;<=>?@[\\]^_`{|}~"
 	if strings.ContainsAny(passwd, specialChara) {
-		special_Test = passed
-		return special_Test
+		specialResult = passed
+		return specialResult
 	} else {
-		special_Test = failed
-		return special_Test
+		specialResult = failed
+		return specialResult
 	}
 
 }
 
 func numbersTest(passwd, passed, failed string) string {
-	numbers_Test := ""
-	var numbers string = "0123456789"
+	numbersResult := ""
+	var numbers = "0123456789"
 	if strings.ContainsAny(passwd, numbers) {
-		numbers_Test = passed
-		return numbers_Test
+		numbersResult = passed
+		return numbersResult
 	} else {
-		numbers_Test = failed
-		return numbers_Test
+		numbersResult = failed
+		return numbersResult
 	}
 
 }
@@ -47,10 +47,10 @@ func main() {
 	var passed = "✓"
 	var failed = "✗"
 
-	var passwd_to_test string
+	var passToTest string
 	fmt.Print("Enter a password to test: ")
-	fmt.Scan(&passwd_to_test)
-	fmt.Printf("Length: %s\n", lengthTest(passwd_to_test, passed, failed))
-	fmt.Printf("Special Characters: %s\n", specialTest(passwd_to_test, passed, failed))
-	fmt.Printf("Numbers: %s\n", numbersTest(passwd_to_test, passed, failed))
+	fmt.Scan(&passToTest)
+	fmt.Printf("Length: %s\n", lengthTest(passToTest, passed, failed))
+	fmt.Printf("Special Characters: %s\n", specialTest(passToTest, passed, failed))
+	fmt.Printf("Numbers: %s\n", numbersTest(passToTest, passed, failed))
 }
