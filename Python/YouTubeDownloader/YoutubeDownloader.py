@@ -2,7 +2,7 @@ from pytube import YouTube, Playlist, exceptions
 import requests
 import argparse
 import time
-import threading
+from threading import Thread
 
 
 def progress_bar():
@@ -61,10 +61,10 @@ if __name__ == "__main__":
     if argus.Video_or_Playlist in ["Playlist", "playlist"]:
         download_playlist(argus.videos, argus.download_location)
     elif argus.Video_or_Playlist in ["Videos", "videos", "Video", "video"]:
-        dl_vids_t = threading.Thread(
+        dl_vids_t = Thread(
             target=download_vids, args=[argus.videos, argus.download_location]
         ).start()
-        progress_bar_t = threading.Thread(target=progress_bar).start()
+        progress_bar_t = Thread(target=progress_bar).start()
 
     else:
         print("Not an option")
