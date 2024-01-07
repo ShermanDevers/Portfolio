@@ -19,16 +19,28 @@ def slot_machine(chosen_item, amount):
     item_1 = random.choice(possible_items)
     item_2 = random.choice(possible_items)
     item_3 = random.choice(possible_items)
+    
+    item_1_prev = possible_items[(possible_items.index(item_1) - 1) % len(possible_items)]
+    item_1_next = possible_items[(possible_items.index(item_1) + 1) % len(possible_items)]
+
+    item_2_next = possible_items[(possible_items.index(item_2) + 1) % len(possible_items)]
+    item_2_prev = possible_items[(possible_items.index(item_2) - 1) % len(possible_items)]
+
+    item_3_next = possible_items[(possible_items.index(item_3) + 1) % len(possible_items)]
+    item_3_prev = possible_items[(possible_items.index(item_3) - 1) % len(possible_items)]
+
+
     print("\n")
     print(
-        f"{random.choice(possible_items)}  {random.choice(possible_items)}  {random.choice(possible_items)}"
+        f"{item_1_prev}  {item_2_prev}  {item_3_prev}"
     )
     print(f"{item_1}  {item_2}  {item_3}")
 
     print(
-        f"{random.choice(possible_items)}  {random.choice(possible_items)}  {random.choice(possible_items)}"
+        f"{item_1_next}  {item_2_next}  {item_3_next}"
     )
     print("\n")
+
     if item_1 == chosen_item:
         matches += 1
     if item_2 == chosen_item:
