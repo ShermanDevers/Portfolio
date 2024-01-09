@@ -3,13 +3,29 @@ let hours;
 let minutes;
 let seconds;
 let secondsRemaining;
+let alerted = false;
+const timerElement = document.querySelector('.timer');
 
 function readInput() {
     hours = parseInt(document.querySelector('#hours').value);
+    if (isNaN(hours)) {
+        alert("Please enter a numerical value for all inputs");
+        alerted = true;
+    }
     minutes = parseInt(document.querySelector('#minutes').value);
+    if (isNaN(minutes) && alerted == false) { 
+        alert("Please enter a numerical value for all inputs");
+    }
+
     seconds = parseInt(document.querySelector('#seconds').value);
+    if (isNaN(seconds) && alerted == false) {
+        alert("Please enter a numerical value for all inputs");
+    }
+
     secondsRemaining = (hours * 3600) + (minutes * 60) + seconds;
-    start();
+    if (alerted == false) {
+        start();
+    }
 }
 
 
@@ -19,11 +35,7 @@ button.addEventListener('click', updateTimer);
 
 function start() {
     const timerElement = document.querySelector('.timer');
-    console.log("Hours", hours);
-    console.log("Minutes", minutes);
-    console.log("Seconds", seconds);
     timerElement.textContent = `${hours.toString().padStart(2, 0)}:${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}`;
-    console.log(timerElement.textContent);
     timerStart = true;
 }
 
@@ -32,7 +44,6 @@ function updateTimer() {
         if (secondsRemaining < 0) {
             timerElement.textContent = "00:00:00";
         }
-        const timerElement = document.querySelector('.timer');
         console.log(secondsRemaining);
         if (secondsRemaining === 0) {
             timerElement.textContent = "Time's up!";
