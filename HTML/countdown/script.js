@@ -3,8 +3,10 @@ let hours;
 let minutes;
 let seconds;
 let secondsRemaining;
+let originalSecondsRemaining;
 let alerted = false;
 const timerElement = document.querySelector('.timer');
+
 
 function readInput() {
     hours = parseInt(document.querySelector('#hours').value);
@@ -23,6 +25,7 @@ function readInput() {
     }
 
     secondsRemaining = (hours * 3600) + (minutes * 60) + seconds;
+    originalSecondsRemaining = secondsRemaining;
     if (alerted == false) {
         start();
     }
@@ -62,6 +65,10 @@ updateTimer();
 
 function resetTimer() {
     const timerElement = document.querySelector('.timer');
+    const hours = Math.floor(originalSecondsRemaining / 3600);
+    const minutes = Math.floor((originalSecondsRemaining / 60) % 60);
+    const seconds = originalSecondsRemaining % 60;
+    console.log(hours, minutes, seconds);
     timerElement.textContent = `${hours.toString().padStart(2, 0)}:${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}`;
     timerStart = false;
 }
