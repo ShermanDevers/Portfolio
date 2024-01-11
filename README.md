@@ -3,7 +3,7 @@
 
 **Some of the projects I've done:**
 
-[Keylogger (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/Logger.py)
+[Keylogger (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/Logger/Logger.py)
 
 [Youtube video downloader (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/YouTubeDownloader/YoutubeDownloader.py)
 
