@@ -4,6 +4,12 @@ import sys
 print("Welcome to the Casino!")
 
 
+def next_item(item, possible_items: list):
+    return possible_items[(possible_items.index(item) + 1) % len(possible_items)]
+
+def prev_item(item, possible_items: list):
+    return possible_items[(possible_items.index(item) - 1) % len(possible_items)]
+
 def deposit(money):
     depo = int(input("How much would you like to deposit?: "))
     money += depo
@@ -20,14 +26,14 @@ def slot_machine(chosen_item, amount):
     item_2 = random.choice(possible_items)
     item_3 = random.choice(possible_items)
     
-    item_1_prev = possible_items[(possible_items.index(item_1) - 1) % len(possible_items)]
-    item_1_next = possible_items[(possible_items.index(item_1) + 1) % len(possible_items)]
+    item_1_prev = prev_item(item_1, possible_items)
+    item_1_next = next_item(item_1, possible_items)
 
-    item_2_next = possible_items[(possible_items.index(item_2) + 1) % len(possible_items)]
-    item_2_prev = possible_items[(possible_items.index(item_2) - 1) % len(possible_items)]
+    item_2_next = next_item(item_2, possible_items)
+    item_2_prev = prev_item(item_2, possible_items)
 
-    item_3_next = possible_items[(possible_items.index(item_3) + 1) % len(possible_items)]
-    item_3_prev = possible_items[(possible_items.index(item_3) - 1) % len(possible_items)]
+    item_3_prev = prev_item(item_3, possible_items)
+    item_3_next = next_item(item_3, possible_items)
 
 
     print("\n")
