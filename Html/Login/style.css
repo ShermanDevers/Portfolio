@@ -1,0 +1,61 @@
+body {
+    background-image: linear-gradient(to right,black,gray);
+}
+
+.login-container {
+    position: absolute;
+    background-color: linear-gradient(to right,black,gray);
+    width: 544px;
+    height: 614px;
+    left: 35%;
+    top: 10%;
+}
+
+.loginText {
+    position: relative;
+    left: 40%;
+    top: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#username {
+    position: relative;
+    width: 369px;
+    height: 58px;
+    left: 75px;
+    top: 100px;
+    border-radius: 20px;
+    border: 2px solid black;
+    outline: 0;
+    font-size: larger;
+}
+
+::placeholder {
+    color: black;
+    opacity: 1;
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+}
+
+#password {
+    position: relative;
+    width: 369px;
+    height: 58px;
+    left: 75px;
+    top: 150px;
+    border-radius: 20px;
+    border: 2px solid black;
+    outline: 0;
+    font-size: larger;
+}
+
+#login {
+    position: relative;
+    width: 200px;
+    height: 58px;
+    left: 155px;
+    top: 200px;
+    border-radius: 20px;
+    border: 2px solid black;
+    font-size: large;
+}
