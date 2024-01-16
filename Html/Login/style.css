@@ -18,7 +18,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-#username {
+#email {
     position: relative;
     width: 369px;
     height: 58px;
@@ -28,6 +28,7 @@ body {
     border: 2px solid black;
     outline: 0;
     font-size: larger;
+    font-family: 'Roboto', sans-serif;
 }
 
 ::placeholder {
@@ -47,6 +48,7 @@ body {
     border: 2px solid black;
     outline: 0;
     font-size: larger;
+    font-family: 'Roboto', sans-serif;
 }
 
 #login {
