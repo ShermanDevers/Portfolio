@@ -61,3 +61,31 @@ body {
     border: 2px solid black;
     font-size: large;
 }
+
+@media (max-width: 940px) {
+    .login-container {
+        left: 2px;
+        width: 250px;
+    }
+    
+    
+    .loginText {
+        color: red;
+        left: 100px;
+    }
+
+    #password {
+        display: block;
+        left: 50px;
+        width: 200px;
+    }
+
+    #login {
+        left: 50px;
+    }
+
+    #email {
+        left: 50px;
+        width: 200px;
+    }
+}
