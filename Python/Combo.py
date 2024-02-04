@@ -5,9 +5,7 @@ import random
 class Gen:
     def __init__(self, pass_length):
         self.passwd = "".join(
-            random.choice(
-                string.digits + string.ascii_letters + string.punctuation
-            )
+            random.choice(string.digits + string.ascii_letters + string.punctuation)
             for x in range(pass_length)
         )
 
