@@ -61,10 +61,6 @@ if __name__ == "__main__":
     if argus.Video_or_Playlist in ["Playlist", "playlist"]:
         download_playlist(argus.videos, argus.download_location)
     elif argus.Video_or_Playlist in ["Videos", "videos", "Video", "video"]:
-        dl_vids_t = Thread(
-            target=download_vids, args=[argus.videos, argus.download_location]
-        ).start()
-        progress_bar_t = Thread(target=progress_bar).start()
-
+        download_vids(argus.videos,argus.download_location)
     else:
         print("Not an option")
