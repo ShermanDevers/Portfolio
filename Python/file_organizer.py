@@ -1,22 +1,34 @@
 import os
 import shutil
+import time
 
-doc_dir = input("Where do you want your documents to be placed (ex: path/you/want/your/documents): ")
-vid_dir = input("Where do you want your video files to be placed (ex: path/you/want/your/documents): ")
-pic_dir = input("Where do you want your pictures to be placed (ex: path/you/want/your/documents: ")
+download_dir = input(
+    "Download folder location (ex: /path/to/downloaded_files): "
+)
 
-
-os.chdir("/home/sherman/Downloads")
-files = os.listdir()
+doc_dir = input("Documents Location (ex: /path/you/want/your/documents): ")
 doc_ext = ["docx"]
+
+vid_dir = input("Videos Location (ex: /path/you/want/your/videos): ")
 vid_ext = ["mp4", "mkv"]
+
+pic_dir = input("Pictures Location (ex: /path/you/want/your/pictures): ")
 pic_ext = ["png", "jpg"]
+
+os.chdir(download_dir)
+whole_dir = os.listdir()
+
+files = []
+
+for item in whole_dir:
+    if os.path.isfile(item) == True:
+        files.append(item)
 
 for file in files:
     period_count = file.count(".")
 
     file = file.replace(".", "", period_count - 1)
-    ending = file.split(".")
+    ending = file.split(".")[1]
 
     if ending in doc_ext:
         shutil.move(file, doc_dir)
