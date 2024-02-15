@@ -1,5 +1,7 @@
 import sys
+import os
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def edit():
     with open("Tasks.txt", "r") as tasks:
@@ -40,8 +42,13 @@ def clear():
 
 def main():
     while True:
-        with open("Tasks.txt", "x") as tasks:
-            tasks.write("")
+
+        if os.path.isfile("Tasks.txt"):
+            pass
+        else:
+            with open("Tasks","w") as tasks:
+                tasks.write("")
+
 
         with open("Tasks.txt", "r") as tasks:
             contents = tasks.read()
