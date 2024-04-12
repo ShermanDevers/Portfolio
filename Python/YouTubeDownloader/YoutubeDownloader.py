@@ -25,8 +25,8 @@ def download_vids(vid_list, dl_location):
 
 
 def download_playlist(playlist_link, dl_location):
-    playlist_link = "".join(playlist_link)
-    print(playlist_link)
+    
+    
     playlist = Playlist(playlist_link)
     for video in playlist.videos:
         try:
@@ -40,27 +40,23 @@ def download_playlist(playlist_link, dl_location):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="CLI program to download YouTube videos and Playlists using pytube"
-    )
-    parser.add_argument(
-        "Video_or_Playlist",
-        type=str,
-        help="Choose whether to download a Video or a Playlist",
-    )
-    parser.add_argument(
-        "videos", nargs="+", type=str, help="URLs of the videos or playlist"
-    )
-    parser.add_argument(
-        "download_location",
-        type=str,
-        help="Where to download the videos (full path) (For videos. It can create the directory if its not there but for playlists it does not)",
-    )
-    argus = parser.parse_args()
+    
+    video_or_playlist = input("Video(s) or Playlist?: ")
+    download_location = input("Where do you want to store the video?: ")
 
-    if argus.Video_or_Playlist in ["Playlist", "playlist"]:
-        download_playlist(argus.videos, argus.download_location)
-    elif argus.Video_or_Playlist in ["Videos", "videos", "Video", "video"]:
-        download_vids(argus.videos,argus.download_location)
+    if Video_or_Playlist in ["Playlist", "playlist"]:
+        link = input("Link of the playlist> ")
+        download_playlist(link, download_location)
+
+    elif Video_or_Playlist in ["Videos", "videos", "Video", "video"]:
+        
+        video_amount = int(input("Amount of videos> "))
+        video_list = []
+
+        for i in range(video_amount):
+            link = input("Link> ")
+            video_list.append(link)
+
+        download_vids(video_list,download_location)
     else:
         print("Not an option")
