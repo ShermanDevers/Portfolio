@@ -36,8 +36,6 @@ def download_vids(vid_list, dl_location):
     print("Check if your school or antivirus is blocking it")
     try_again() 
 
-# Same as download_vids but can't download
-# multiple playlists
 def download_playlist(playlist_link, dl_location):
     if check_link(playlist_link) is False:
       print("Link is not valid or something is block it")
