@@ -73,7 +73,6 @@ def choice_of_download():
         download_playlist(link, download_location)
     elif video_or_playlist in ["Videos", "videos", "Video", "video"]:
         video_amount = int(input("Amount of videos> "))
-        # video_list = []
         for _ in range(video_amount):
             add_link()
 
