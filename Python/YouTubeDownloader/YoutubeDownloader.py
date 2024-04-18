@@ -1,6 +1,7 @@
 from pytube.cli import on_progress
 from pytube import YouTube, Playlist, exceptions
 import requests
+import urllib
 
 
 def try_again():
@@ -34,6 +35,8 @@ def download_vids(vid_list, dl_location):
                 try_again()
             except exceptions.AgeRestrictedError:
                 print(f"{video.title}: Age Restricted")
+            except urllib.error.HTTPError:
+                print("Blocked")
         else:
             print("Blocked or Invalid Link")
             invalid_links.append(link)
