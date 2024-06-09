@@ -74,9 +74,13 @@ def bet_choices(money):
             continue
         else:
             break
-
+    print(money)
     money_won = slot_machine(bet_item, betting_amount)
-    money = money + money_won
+    if money_won > 0:
+        money += money_won
+    else:
+        money -= betting_amount
+    print(f"New money: {money}")
     return money
 
 
