@@ -60,27 +60,54 @@ def slot_machine(chosen_item, amount):
     return amount
 
 
+def bet_choices(money):
+    bet_item = input("What item would you like to bet on? (Diamond, Gold, Cherry): ")
+
+    while True:
+        betting_amount = int(
+            input(
+                "Betting amount (you get double if you get 2 or more of the chosen item): "
+            )
+        )
+        if betting_amount > money:
+            print("Can't bet more than you have!")
+            continue
+        else:
+            break
+
+    money_won = slot_machine(bet_item, betting_amount)
+    money = money + money_won
+    return money
+
+
 def main():
     money = 0
 
     while True:
+        if money > 0:
+            continue_q = input("Continue(c) or Quit(q): ")
+            match continue_q:
+                case "c":
+                    bet_choices(money)
+                case "q":
+                    print(f"You left with {money}")
+                    sys.exit()
+                case "":
+                    print("Not an option!")
+                    continue
+
         depo_or_quit = input("Deposit(d) or Quit(q)?: ")
+
         match depo_or_quit:
             case "d":
                 money = deposit(money)
             case "q":
                 print(f"You left with {money}")
                 sys.exit()
-
-        bet_item = input(
-            "What item would you like to bet on? (Diamond, Gold, Cherry): "
-        )
-        betting_amount = int(
-            input(
-                "Betting amount (you get double if you get 2 or more of the chosen item): "
-            )
-        )
-        money = slot_machine(bet_item, betting_amount)
+            case "":
+                print("Not an option")
+                continue
+        money = bet_choices(money)
 
 
 if __name__ == "__main__":
