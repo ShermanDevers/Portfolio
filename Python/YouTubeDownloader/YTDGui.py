@@ -13,12 +13,11 @@ class App(customtkinter.CTk):
             self.progress_bar.set(0)
             try:
                 yt = YouTube(vid, on_progress_callback=self.progress_update)
-                yt.streams.get_highest_resolution().download(self.download_location_var)
-                app.title(yt.title)
-                self.videos_downloaded += 1
                 self.amount_done.configure(
-                    text=f"{self.videos_downloaded}/{self.total_vids}"
+                    text=f"{yt.title}   {self.videos_downloaded}/{self.total_vids}"
                 )
+                yt.streams.get_highest_resolution().download(self.download_location_var)
+                self.videos_downloaded += 1
             except exceptions.AgeRestrictedError:
                 self.status.configure(text=f"{yt.title} is AGE RESTRICTED")
         self.status.configure(text="Done")
@@ -54,7 +53,7 @@ class App(customtkinter.CTk):
         self.link_input = customtkinter.CTkEntry(self, width=350, height=45)
         self.link_input.pack()
 
-        self.progrees_per = customtkinter.CTkLabel(self, text="0%")
+        self.progrees_per = customtkinter.CTkLabel(self, text="")
         self.progrees_per.pack(pady=(10, 5))
 
         self.progress_bar = customtkinter.CTkProgressBar(self, width=500)
@@ -89,7 +88,6 @@ class App(customtkinter.CTk):
     def download_choice(self):
         self.combo_var = self.vid_or_playlist_combobox.get()
         if self.combo_var == "Video":
-            print("Video being downloaded")
             self.download_vids()
 
 
