@@ -19,4 +19,4 @@
 
 [CLI Todo App (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/TODO.py)
 
-[Countdown Timer (HTML)](https://shermandevers.github.io/)
+[Countdown Timer (HTML)](https://shermandevers.github.io/countdown)
