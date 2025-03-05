@@ -1,4 +1,3 @@
-# Limbo Alg
 mapping = {
     "A": "Z",
     "B": "Y",
