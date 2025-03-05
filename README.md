@@ -7,9 +7,9 @@
 
 [Youtube video downloader (Python) (Not working)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/YouTubeDownloader/YoutubeDownloader.py)
 
-[A simple cipher algorithm (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/LimboAlg.py)
+[A simple cipher algorithm (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/CaesarCipher.py)
 
-[Countdown timer (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/count%20down.py)
+[Countdown timer (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/Timer.py)
 
 [Password Strength Tester (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/Password%20Strength%20Tester.py)
 
