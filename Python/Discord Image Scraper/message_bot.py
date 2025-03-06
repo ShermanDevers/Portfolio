@@ -34,8 +34,9 @@ def main():
     @client.event
     async def on_ready():
         logging.info("Ready")
+        await client.tree.sync()
 
-    @client.command()
+    @client.tree.command(name="crawl", description="Crawl a channel for its images")
     async def imagecrawl(ctx, channelid: int, limit: int = 100):
         headers = {"authorization": config.AUTH}
         messages = requests.get(
@@ -102,8 +103,6 @@ def main():
         logging.info(
             f"{image_amount} attachments/embeds retrieved from messages in {guild_name}:{channel_name}"
         )
-
-    client.add_command(imagecrawl)
 
     client.run(config.DISCORD_API_TOKEN)
 
