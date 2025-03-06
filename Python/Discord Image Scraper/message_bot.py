@@ -103,6 +103,8 @@ def main():
             f"{image_amount} attachments/embeds retrieved from messages in {guild_name}:{channel_name}"
         )
 
+    client.add_command(imagecrawl)
+
     client.run(config.DISCORD_API_TOKEN)
 
 
