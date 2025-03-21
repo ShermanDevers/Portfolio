@@ -13,7 +13,7 @@ def create_channel(ctx):
 
 
 def get_guild_name(guild_id):
-    headers = {"authorization": config.AUTH}
+    headers = {"authorization": config.DISCORD_API_AUTH}
     guild = requests.get(
         f"https://discord.com/api/v10/guilds/{guild_id}", headers=headers
     )
@@ -38,7 +38,7 @@ def main():
 
     @client.tree.command(name="crawl", description="Crawl a channel for its images")
     async def imagecrawl(ctx, channelid: int, limit: int = 100):
-        headers = {"authorization": config.AUTH}
+        headers = {"authorization": config.DISCORD_API_AUTH}
         messages = requests.get(
             f"https://discord.com/api/v10/channels/{channelid}/messages?limit={limit}",
             headers=headers,
@@ -104,7 +104,7 @@ def main():
             f"{image_amount} attachments/embeds retrieved from messages in {guild_name}:{channel_name}"
         )
 
-    client.run(config.DISCORD_API_TOKEN)
+    client.run(config.BOT_API_TOKEN)
 
 
 if __name__ == "__main__":
