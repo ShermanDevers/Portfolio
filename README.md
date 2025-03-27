@@ -6,7 +6,7 @@
 
 ### Python
 
-[Discord Image Scraper Bot](https://github.com/ShermanDevers/Portfolio/blob/main/Python/Discord%20Image%20Scraper/message_bot.py)
+[Discord Image Scraper Bot](https://github.com/ShermanDevers/Portfolio/blob/main/Python/Discord%20Image%20Scraper/message_bot.py) [Install](https://discord.com/oauth2/authorize?client_id=1347078701736787969)
 
 [Keylogger (Python)](https://github.com/ShermanDevers/Portfolio/blob/main/Python/Logger/Logger.py)
 
