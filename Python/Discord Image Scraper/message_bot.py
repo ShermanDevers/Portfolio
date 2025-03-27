@@ -6,8 +6,8 @@ import json
 import logging
 
 
-def create_channel(ctx):
-    guild = ctx.message.guild
+def create_channel(interaction):
+    guild = interaction.guild
 
     return guild
 
@@ -36,8 +36,10 @@ def main():
         logging.info("Ready")
         await client.tree.sync()
 
-    @client.tree.command(name="crawl", description="Crawl a channel for its images")
-    async def imagecrawl(ctx, channelid: int, limit: int = 100):
+    @client.tree.command(
+        name="crawl", description="Crawl a discord channel for its images"
+    )
+    async def imagecrawl(interaction, channelid: str, limit: int = 1000):
         headers = {"authorization": config.DISCORD_API_AUTH}
         messages = requests.get(
             f"https://discord.com/api/v10/channels/{channelid}/messages?limit={limit}",
@@ -81,21 +83,21 @@ def main():
             except TypeError:
                 logging.info("Problem with message")
 
-        links = list(set(links))
-        links.reverse()
+        links = list(dict.fromkeys(links))
 
         guild_name = guild_name.replace("'", "")
         guild_name = guild_name.replace(" ", "-")
 
         new_name = f"{guild_name.lower()}_{channel_name}"
-        guild = ctx.message.guild
-
+        guild = interaction.guild
         channel = discord.utils.get(guild.channels, name=new_name)
         if channel is None:
             await guild.create_text_channel(new_name)
             channel = discord.utils.get(guild.channels, name=new_name)
 
         await channel.send("---------Attachments---------")
+        print(len(links))
+        print(links)
         for link in links:
             await channel.send(link)
             image_amount += 1
