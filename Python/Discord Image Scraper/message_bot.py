@@ -39,7 +39,7 @@ def main():
     @client.tree.command(
         name="crawl", description="Crawl a discord channel for its images"
     )
-    async def imagecrawl(interaction, channelid: str, limit: int = 1000):
+    async def imagecrawl(interaction, channelid: str, limit: int = 100):
         headers = {"authorization": config.DISCORD_API_AUTH}
         messages = requests.get(
             f"https://discord.com/api/v10/channels/{channelid}/messages?limit={limit}",
@@ -82,9 +82,10 @@ def main():
                 logging.error("Didn't have attachments and/or embeds")
             except TypeError:
                 logging.info("Problem with message")
+                print(mess_json)
 
         links = list(dict.fromkeys(links))
-
+        links.reverse()
         guild_name = guild_name.replace("'", "")
         guild_name = guild_name.replace(" ", "-")
 
@@ -96,8 +97,6 @@ def main():
             channel = discord.utils.get(guild.channels, name=new_name)
 
         await channel.send("---------Attachments---------")
-        print(len(links))
-        print(links)
         for link in links:
             await channel.send(link)
             image_amount += 1
